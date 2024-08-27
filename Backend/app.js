@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import cors from "cors"
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import { dbConnection } from "./database/dbConnection.js";
 
 const app = express();
 
@@ -24,5 +25,7 @@ app.use(fileUpload({
     useTempFiles:true,
     tempFileDir: '/tmp/'
 }))
+
+dbConnection();
 
 export default app;
