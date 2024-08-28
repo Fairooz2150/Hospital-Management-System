@@ -1,7 +1,7 @@
 import {catchAsyncErrors} from "../middlewares/catchAsyncErrors.js"
 import ErrorHandler from "../middlewares/errorMiddleware.js"
 import { User } from "../models/userSchema.js"
-
+import { generateToken } from "../utils/jwtToken.js"
 
 export const patientRegister = catchAsyncErrors(async(req,res,next)=>{
     const {firstName, lastName, email, phone, password, gender, aadhar, dob, role} = req.body
@@ -15,14 +15,11 @@ export const patientRegister = catchAsyncErrors(async(req,res,next)=>{
     }
 
     user = await User.create({firstName, lastName, email, phone, password, gender, dob, aadhar, role })
-    res.status(200).json({
-        success:true,
-        message: "User Registered!"
-    })
+    generateToken(user, "User Registered", 200, res );
 })
 
 
-export const login = catchAsyncErrors(async(req,res,next)=>{
+export const login = catchAsyncErrors(async (req,res,next)=>{
     const {email, password, confirmPassword, role } = req.body;
     if(!email || !password || !confirmPassword || !role ){
         return next(new ErrorHandler("Please provide all details!", 400))
@@ -46,8 +43,6 @@ export const login = catchAsyncErrors(async(req,res,next)=>{
     if(role !== user.role){
         return next(new ErrorHandler("User with this role not found!", 400))
     }
-    res.status(200).json({
-        success:true,
-        message: "User Logged In Successfully!"
-    })
+    generateToken(user, "User Login Successfully", 200, res );
+
 })
