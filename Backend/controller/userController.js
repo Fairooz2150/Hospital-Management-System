@@ -57,12 +57,12 @@ export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
 
     const isRegisterd = await User.findOne({email});
     if (isRegisterd){
-        return next(new ErrorHandler("Admin with this email already exists!", 400))
+        return next(new ErrorHandler(`${isRegisterd.role} with this email already exists!`, 400))
     }
 
     const admin = await User.create({firstName, lastName, email, phone, password, gender, aadhar, dob, role: "Admin" });
     res.status(200).json({
         success: true,
-        message: "New Admin Registered"
+        message: "New Admin Registered!"
     })
 })
