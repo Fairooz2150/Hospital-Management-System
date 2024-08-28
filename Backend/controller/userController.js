@@ -4,8 +4,8 @@ import { User } from "../models/userSchema.js"
 
 
 export const patientRegister = catchAsyncErrors(async(req,res,next)=>{
-    const {firstName, lastName, email, phone, password, gender, aadhar, role} = req.body
-    if(!firstName || !lastName || !email || !phone || !password || !gender || !aadhar || !role){
+    const {firstName, lastName, email, phone, password, gender, aadhar, dob, role} = req.body
+    if(!firstName || !lastName || !email || !phone || !password || !gender || !aadhar || !dob || !role){
         return next(new ErrorHandler("Please Fill Full Form!", 400))
     }
 
@@ -14,7 +14,7 @@ export const patientRegister = catchAsyncErrors(async(req,res,next)=>{
         return next(new ErrorHandler("User Already Registered!", 400))
     }
 
-    user = await User.create({firstName, lastName, email, phone, password, gender, aadhar, role })
+    user = await User.create({firstName, lastName, email, phone, password, gender, dob, aadhar, role })
     res.status(200).json({
         success:true,
         message: "User Registered!"

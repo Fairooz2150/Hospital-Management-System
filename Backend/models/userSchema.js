@@ -28,8 +28,8 @@ const userSchema = new mongoose.Schema({
     aadhar:{
         type: String,
         required: true,
-        maxLength:[12, "Aadhar must contain exact 12 digits!"],
-        minLength:[12, "Aadhar must contain exact 12 digits!"]
+        maxLength:[12, "Aadhar number must contain exact 12 digits!"],
+        minLength:[12, "Aadhar number must contain exact 12 digits!"]
     },
     dob:{
         type: Date,
