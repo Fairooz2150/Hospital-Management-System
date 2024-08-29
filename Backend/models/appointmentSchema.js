@@ -38,7 +38,7 @@ const appointmentSchema = new mongoose.Schema({
         required : true,
         enum: ["Male", "Female", "Others"]
     },
-    appointmenT_date:{
+    appointment_date:{
         type: String,
         required: true
     },
@@ -58,7 +58,7 @@ const appointmentSchema = new mongoose.Schema({
     },
     hasVisited:{
         type: Boolean,
-        required: true
+        default: false
     },
     doctorId:{
         type: mongoose.Schema.ObjectId,
