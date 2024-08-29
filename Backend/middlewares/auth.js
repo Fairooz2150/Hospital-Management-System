@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { User } from "../models/userSchema.js";
-import {catchAsyncErrors}  from "./catchAsyncErrors.js"
+import { catchAsyncErrors } from "./catchAsyncErrors.js"
 import ErrorHandler from "./errorMiddleware.js";
 
 export const isAdminAuthenticated = catchAsyncErrors(async (req, res, next) => {
