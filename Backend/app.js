@@ -12,21 +12,22 @@ import appointmentRouter from "./router/appointmentRouter.js"
 const app = express();
 
 
-config({path: "./config/config.env"})
+config({ path: "./config/config.env" })
 
 app.use(cors(
-    { origin: [process.env.FRONTEND_URL, process.env.DASHBOAR_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials:true
+    {
+        origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
     }
 ))
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(express.urlencoded({ extended:true }))
+app.use(express.urlencoded({ extended: true }))
 
 app.use(fileUpload({
-    useTempFiles:true,
+    useTempFiles: true,
     tempFileDir: '/tmp/'
 }))
 
