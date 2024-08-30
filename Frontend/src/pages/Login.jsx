@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../main";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
@@ -11,6 +13,21 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/v1/user/login",
+        { email, password, confirmPassword, role: "Patient" },
+        {
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      toast.success(response.data.message);
+      setIsAuthenticated(true);
+      navigateTo("/");
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   if (isAuthenticated) {
@@ -22,8 +39,10 @@ const Login = () => {
       <h2>Login In</h2>
       <p>Please Login to Continue</p>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero possimus
-        magnam aliquid tenetur debitis iure?
+        Welcome to Life Care. Please manage appointments and stay
+        connected with your healthcare provider. Your privacy and security are
+        our top priorities. If you experience any issues, please contact our
+        support team for assistance.
       </p>
       <form onSubmit={handleLogin}>
         <input
@@ -61,7 +80,7 @@ const Login = () => {
           </Link>
         </div>
         <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Login</button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>
