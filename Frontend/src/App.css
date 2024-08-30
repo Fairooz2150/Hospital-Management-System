@@ -229,3 +229,107 @@ h6 {
   height: fit-content;
   font-weight: 700;
 }
+
+
+.form-component {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.form-component h2 {
+  color: gray;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+.form-component h4 {
+  color: gray;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.form-component p {
+  max-width: 750px;
+  color: gray;
+  margin-bottom: 20px;
+}
+.form-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.form-component form div {
+  display: flex;
+  gap: 30px;
+}
+.form-component form input,
+.form-component form select,
+.form-component form textarea {
+  flex: 1;
+  font-size: 24px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.form-component button {
+  padding: 10px 35px;
+  color: #fff;
+  font-weight: 700;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  background: linear-gradient(140deg, #9083d5, #271776ca);
+}
+.form-component .wrapper {
+  display: flex;
+  gap: 50px;
+}
+.form-component .wrapper .banner {
+  flex: 1;
+}
+.form-component .wrapper .banner:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-component .wrapper .banner:last-child img {
+  max-width: 450px;
+}
+@media (max-width: 888px) {
+  .form-component {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form-component form div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 667px) {
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+.message-form {
+  position: relative;
+}
+.message-form h2 {
+  text-align: center;
+  color: #000;
+  position: relative;
+}
+.message-form img {
+  position: absolute;
+  top: 0;
+  right: -16%;
+  height: 600px;
+  z-index: -1;
+}
+@media (max-width: 700px) {
+  .message-form img {
+    right: -35%;
+    height: 450px;
+    top: 10%;
+  }
+}
