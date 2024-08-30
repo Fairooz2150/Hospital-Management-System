@@ -69,8 +69,20 @@ const Departments = () => {
   return (
     <div className='container departments'>
       <h2>Departments</h2>
-      <Carousel responsive={responsive}>
-        
+      <Carousel responsive={responsive} removeArrowOnDeviceType={["medium", "small"]}>
+        {
+          departmentsArray.map((depart, index) => {
+            return (
+              <div className="card" key={index}>
+                <div className="depart-name">
+                  {depart.name}
+                </div>
+                <img src={depart.imageUrl} alt={depart.name} />
+
+              </div>
+            )
+          })
+        }
       </Carousel>
 
     </div>
