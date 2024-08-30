@@ -11,7 +11,7 @@ const Home = () => {
                 title={"Life Care Hospital, Where Compassion Meets Excellence in Healthcare "}
                 imageUrl={"/hero.png"}
             />
-            <Biography />
+            <Biography imageUrl={"/about.png"} />
             <Departments />
             <MessageForm />
 
