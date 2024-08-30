@@ -11,7 +11,7 @@ const Navbar = () => {
   
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/patient/logout", {
+      .get("http://localhost:4000/api/v1/user/patient/logout", {
         withCredentials: true,
       })
       .then((res) => {
@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link to={"/appointment"}>Appointment </Link>
           <Link to={"/about"}>About Us </Link>
         </div>
-        {isAuthenticated ? (
+        {!isAuthenticated ? (
           <button className="logoutBtn btn" onClick={handleLogout}>
             Logout
           </button>
