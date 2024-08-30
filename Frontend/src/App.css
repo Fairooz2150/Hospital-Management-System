@@ -493,3 +493,13 @@ input[type="time"]:before {
 footer .logo-img{
   width: 100%;
 }
+
+
+.login-form {
+  margin: 100px auto 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+.login-form h2 {
+  color: #000;
+}
