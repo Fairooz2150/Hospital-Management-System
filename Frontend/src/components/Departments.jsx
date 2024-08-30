@@ -1,9 +1,8 @@
-import React from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Departments = () => {
-
   const departmentsArray = [
     {
       name: "Pediatrics",
@@ -41,7 +40,7 @@ const Departments = () => {
       name: "ENT",
       imageUrl: "/departments/ent.jpg",
     },
-  ]
+  ];
 
   const responsive = {
     extraLarge: {
@@ -64,29 +63,26 @@ const Departments = () => {
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
-  }
+  };
 
   return (
-    <div className='container departments'>
+    <div className="container departments">
       <h2>Departments</h2>
-      <Carousel responsive={responsive} removeArrowOnDeviceType={["medium", "small"]}>
-        {
-          departmentsArray.map((depart, index) => {
-            return (
-              <div className="card" key={index}>
-                <div className="depart-name">
-                  {depart.name}
-                </div>
-                <img src={depart.imageUrl} alt={depart.name} />
-
-              </div>
-            )
-          })
-        }
+      <Carousel
+        responsive={responsive}
+        removeArrowOnDeviceType={["medium", "small"]}
+      >
+        {departmentsArray.map((depart, index) => {
+          return (
+            <div className="card" key={index}>
+              <div className="depart-name">{depart.name}</div>
+              <img src={depart.imageUrl} alt={depart.name} />
+            </div>
+          );
+        })}
       </Carousel>
-
     </div>
   );
-}
+};
 
 export default Departments;
