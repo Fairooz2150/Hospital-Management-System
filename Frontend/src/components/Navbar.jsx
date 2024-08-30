@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link to={"/appointment"}>Appointment </Link>
           <Link to={"/about"}>About Us </Link>
         </div>
-        {!isAuthenticated ? (
+        {isAuthenticated ? (
           <button className="logoutBtn btn" onClick={handleLogout}>
             Logout
           </button>
