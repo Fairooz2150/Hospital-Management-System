@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../main";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
@@ -17,6 +19,29 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/v1/user/patient/register",
+        {firstName,
+          lastName,
+          email,
+          phone,
+          password,
+          gender,
+          aadhar,
+          dob, 
+          role: "Patient" },
+        {
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      toast.success(response.data.message);
+      setIsAuthenticated(true);
+      navigateTo("/");
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   if (isAuthenticated) {
