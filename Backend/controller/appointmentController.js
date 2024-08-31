@@ -30,6 +30,7 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
         !appointment_date ||
         !department ||
         !doctor_firstName ||
+        !doctor_lastName ||
         !address) {
         return next(new ErrorHandler("Please Fill Full Form!", 400))
     }
