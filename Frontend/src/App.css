@@ -149,88 +149,6 @@ h6 {
     }
   }
 }
-
-
-.biography {
-  display: flex;
-  gap: 50px;
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-.biography .banner:first-child {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.biography .banner:last-child {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.biography .banner h3 {
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-.biography .banner p:first-child {
-  font-size: 24px;
-  letter-spacing: 2px;
-}
-@media (max-width: 925px) {
-  .biography {
-    flex-direction: column-reverse;
-  }
-}
-
-
-
-.departments {
-  padding-top: 30px;
-  padding-bottom: 50px;
-}
-.departments h2 {
-  color: gray;
-  margin-bottom: 30px;
-}
-.card {
-  position: relative;
-  border-radius: 8px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 15px;
-  padding-left: 10px;
-  padding-right: 20px;
-  min-height: 360px;
-  margin: 0 10px;
-  text-decoration: none;
-}
-.card img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-.card .depart-name {
-  margin-bottom: 30px;
-  background: #e5e5e5;
-  width: 320px;
-  font-size: 24px;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  padding: 12px;
-  border-radius: 30px;
-  left: 0;
-  height: fit-content;
-  font-weight: 700;
-}
-
-
 .form-component {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -294,6 +212,29 @@ h6 {
 .form-component .wrapper .banner:last-child img {
   max-width: 450px;
 }
+.login-form {
+  margin: 100px auto 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+.register-form {
+  max-width: 1200px;
+  margin: 100px auto 20px auto;
+}
+.login-form h2 {
+  color: #000;
+}
+.register-form h2 {
+  color: #000;
+}
+@media (max-width: 1110px) {
+  .appointment-form form div:nth-child(4) {
+    flex-direction: column;
+  }
+  .appointment-form form div:nth-child(5) {
+    flex-direction: column;
+  }
+}
 @media (max-width: 888px) {
   .form-component {
     padding-top: 30px;
@@ -309,6 +250,37 @@ h6 {
   .form-component form textarea {
     font-size: 20px;
     padding: 10px;
+  }
+}
+.biography {
+  display: flex;
+  gap: 50px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.biography .banner:first-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.biography .banner:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.biography .banner h3 {
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.biography .banner p:first-child {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+@media (max-width: 925px) {
+  .biography {
+    flex-direction: column-reverse;
   }
 }
 .message-form {
@@ -333,8 +305,130 @@ h6 {
     top: 10%;
   }
 }
+footer {
+  padding-bottom: 30px !important;
+}
+footer hr {
+  margin-bottom: 30px;
+}
+footer .content {
+  display: flex;
+  gap: 20px;
+}
+footer .content div {
+  flex: 1;
+}
+footer .content div:nth-child(3) {
+  flex: 2;
+}
+footer .content div h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+footer .content div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer .content div ul a {
+  color: gray;
+  text-decoration: none;
+}
+footer .content div ul a:hover {
+  color: #8570ed;
+  transition: 0.3s;
+}
+footer .content div ul li span {
+  color: gray;
+}
+footer .content div ul li span:first-child {
+  width: 150px;
+  display: inline-block;
+}
 
+footer .content div:last-child div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+footer .content div:last-child div svg {
+  font-size: 24px;
+}
+@media (max-width: 1135px) {
+  footer .content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer .content div,
+  footer .content div:nth-child(3) {
+    flex: none;
+    width: 340px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 900px) {
+  footer {
+    padding-bottom: 0 !important;
+  }
+  footer .content div,
+  footer .content div:nth-child(3) {
+    width: 100%;
+  }
+}
+@media (max-width: 390px) {
+  footer .content div:nth-child(3) ul li {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
+.departments {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.departments h2 {
+  color: gray;
+  margin-bottom: 30px;
+}
+.card {
+  position: relative;
+  border-radius: 8px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 20px;
+  min-height: 360px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.card .depart-name {
+  margin-bottom: 30px;
+  background: #e5e5e5;
+  width: 320px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 30px;
+  left: 0;
+  height: fit-content;
+  font-weight: 700;
+}
+
+/**********************************************************************************************************************/
 nav {
   display: flex;
   width: 100%;
@@ -492,87 +586,4 @@ input[type="time"]:before {
 }
 footer .logo-img{
   width: 100%;
-}
-
-
-.login-form {
-  margin: 100px auto 20px auto;
-  max-width: 800px;
-  text-align: center;
-}
-.login-form h2 {
-  color: #000;
-}
-
-
-.register-form {
-  max-width: 1200px;
-  margin: 100px auto 20px auto;
-}
-.register-form h2 {
-  color: #000;
-}
-
-.form-component {
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
-.form-component h2 {
-  color: gray;
-  letter-spacing: 4px;
-  margin-bottom: 30px;
-}
-.form-component h4 {
-  color: gray;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.form-component p {
-  max-width: 750px;
-  color: gray;
-  margin-bottom: 20px;
-}
-.form-component form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.form-component form div {
-  display: flex;
-  gap: 30px;
-}
-.form-component form input,
-.form-component form select,
-.form-component form textarea {
-  flex: 1;
-  font-size: 24px;
-  padding: 10px 10px 10px 40px;
-  border-radius: 7px;
-  border: 1px solid gray;
-}
-.form-component button {
-  padding: 10px 35px;
-  color: #fff;
-  font-weight: 700;
-  width: fit-content;
-  border: none;
-  border-radius: 8px;
-  font-size: 24px;
-  margin-bottom: 30px;
-  background: linear-gradient(140deg, #9083d5, #271776ca);
-}
-.form-component .wrapper {
-  display: flex;
-  gap: 50px;
-}
-.form-component .wrapper .banner {
-  flex: 1;
-}
-.form-component .wrapper .banner:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.form-component .wrapper .banner:last-child img {
-  max-width: 450px;
 }
