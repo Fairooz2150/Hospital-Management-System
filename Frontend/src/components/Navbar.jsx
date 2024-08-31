@@ -8,8 +8,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
-  const navigateTo =useNavigate();
-  
+  const navigateTo = useNavigate();
+
   const handleLogout = async () => {
     await axios
       .get("http://localhost:4000/api/v1/user/patient/logout", {
@@ -30,25 +30,28 @@ const Navbar = () => {
   return (
     <>
       <nav className="container">
-        <div className="logo">Life Care</div>
+        <div className="logo">
+          {" "}
+          <img src="/logo.png" alt="logo" className="logo-img" />
+        </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
-        <div className="links">
-          <Link to={"/"}>Home </Link>
-          <Link to={"/appointment"}>Appointment </Link>
-          <Link to={"/about"}>About Us </Link>
+          <div className="links">
+            <Link to={"/"}>Home </Link>
+            <Link to={"/appointment"}>Appointment </Link>
+            <Link to={"/about"}>About Us </Link>
+          </div>
+          {isAuthenticated ? (
+            <button className="logoutBtn btn" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <button className="logoutBtn btn" onClick={gotoLogin}>
+              Login
+            </button>
+          )}
         </div>
-        {isAuthenticated ? (
-          <button className="logoutBtn btn" onClick={handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <button className="logoutBtn btn" onClick={gotoLogin}>
-            Login
-          </button>
-        )}
-        </div>
-        <div className="hamburger" onClick={()=> setShow(!show)}>
-          <GiHamburgerMenu/>
+        <div className="hamburger" onClick={() => setShow(!show)}>
+          <GiHamburgerMenu />
         </div>
       </nav>
     </>
