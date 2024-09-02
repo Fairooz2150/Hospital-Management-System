@@ -7,7 +7,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const navigateTo = useNavigate();
 
@@ -36,7 +36,7 @@ const Navbar = () => {
       <nav className="container">
         <div className="logo">
           {" "}
-          <img src="/logo.png" alt="logo" className="logo-img" />
+          <img src="/logo.png" alt="logo" className="logo-img" onClick={()=>navigateTo("/")}/>
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">

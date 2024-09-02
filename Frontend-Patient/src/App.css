@@ -7,7 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #e5e5e5;
+  background: white;
 }
 .btn {
   padding: 7px 20px;
@@ -468,7 +468,7 @@ nav .navLinks .links a {
   letter-spacing: 1.4px;
 }
 nav .navLinks .links a:hover {
-  color: #000;
+  color: #4365b5;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -582,7 +582,7 @@ input[type="time"]:before {
   margin-right: 0.5em;
 }
 .logo-img{
-  width: 150px;
+  width: 180px;
 }
 footer .logo-img{
   width: 100%;
