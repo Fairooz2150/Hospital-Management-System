@@ -19,13 +19,16 @@ const Navbar = () => {
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);
+        
       })
       .catch((err) => {
         toast.error(err.response.data.message);
       });
   };
+
   const gotoLogin = async () => {
     navigateTo("/login");
+    setShow(!show)
   };
 
   return (
@@ -37,9 +40,9 @@ const Navbar = () => {
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">
-            <Link to={"/"}>Home </Link>
-            <Link to={"/appointment"}>Appointment </Link>
-            <Link to={"/about"}>About Us </Link>
+            <Link to={"/"} onClick={() =>  setShow(!show)}>Home </Link>
+            <Link to={"/appointment"} onClick={() =>  setShow(!show)}>Appointment </Link>
+            <Link to={"/about"} onClick={() =>  setShow(!show)}>About Us </Link>
           </div>
           {isAuthenticated ? (
             <button className="logoutBtn btn" onClick={handleLogout}>
