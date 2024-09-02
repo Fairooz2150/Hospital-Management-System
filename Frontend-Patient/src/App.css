@@ -345,10 +345,10 @@ footer .content div ul a {
   text-decoration: none;
 }
 footer .content div ul a:hover {
-  color: #8570ed;
+  color: #1f4e8c;
   transition: 0.3s;
 }
-footer .content div ul li span {
+footer .content div ul li span  {
   color: gray;
 }
 footer .content div ul li span:first-child {
@@ -363,7 +363,7 @@ footer .content div:last-child div {
   margin-bottom: 10px;
 }
 footer .content div:last-child div svg {
-  font-size: 24px;
+  font-size: 20px;
 }
 @media (max-width: 1135px) {
   footer .content {
@@ -393,6 +393,25 @@ footer .content div:last-child div svg {
   }
 }
 
+footer  div:last-child p {
+  text-align: center;
+  
+ flex: 1;
+ 
+}
+.social-icons{
+  padding-top: 10px;
+}
+
+.social-icons a{
+  color: #000;
+  margin-right: 15px;
+}
+
+.social-icons a:hover{
+  color: #1f4e8c;
+  margin-right: 15px;
+}
 .departments {
   padding-top: 30px;
   padding-bottom: 50px;

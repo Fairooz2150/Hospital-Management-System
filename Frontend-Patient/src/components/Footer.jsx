@@ -1,68 +1,61 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaLocationArrow, FaPhone } from "react-icons/fa6";
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { FaGithub, FaInstagramSquare } from "react-icons/fa";
+import { RxLinkedinLogo } from "react-icons/rx";
+import { IoGlobeOutline } from "react-icons/io5";
 
 const Footer = () => {
-  const hours = [
-    {
-      id: 1,
-      day: "Monday",
-      time: "9:00 AM - 11:00 PM",
-    },
-    {
-      id: 2,
-      day: "Tuesday",
-      time: "12:00 PM - 12:00 AM",
-    },
-    {
-      id: 3,
-      day: "Wednesday",
-      time: "10:00 AM - 10:00 PM",
-    },
-    {
-      id: 4,
-      day: "Thursday",
-      time: "9:00 AM - 9:00 PM",
-    },
-    {
-      id: 5,
-      day: "Monday",
-      time: "3:00 PM - 9:00 PM",
-    },
-    {
-      id: 6,
-      day: "Saturday",
-      time: "9:00 AM - 3:00 PM",
-    },
-  ];
-
   return (
     <>
-      <footer className={"container"}>
+      <footer className="container">
         <hr />
         <div className="content">
           <div>
-            <img src="/logo.png" alt="logo" className="logo-img"/>
+            <img src="/logo.png" alt="logo" className="logo-img" />
           </div>
           <div>
             <h4>Quick Links</h4>
             <ul>
               <Link to={"/"}>Home</Link>
               <Link to={"/appointment"}>Appointment</Link>
-              <Link to={"/about"}>About</Link>
+              <Link to={"/about"}>About Us</Link>
             </ul>
           </div>
           <div>
-            <h4>Hours</h4>
-            <ul>
-              {hours.map((element) => (
-                <li key={element.id}>
-                  <span>{element.day}</span>
-                  <span>{element.time}</span>
-                </li>
-              ))}
-            </ul>
+            <h4>Developed by</h4>
+            <p>Muhammad Fairooz</p>
+            <div className="social-icons">
+              <a
+                href="https://fairooz2150.github.io/Fairooz/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IoGlobeOutline />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/muhammad-fairooz-0b1136268/?trk=public-profile-join-page"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <RxLinkedinLogo />
+              </a>
+              <a
+                href="https://github.com/Fairooz2150"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.instagram.com/marsh__mell_o/?igsh=MWhwZmI5NDRsMWoxMQ%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagramSquare />
+              </a>
+            </div>
           </div>
           <div>
             <h4>Contact</h4>
@@ -75,10 +68,13 @@ const Footer = () => {
               <span>lifecare@gmail.com</span>
             </div>
             <div>
-              <FaLocationArrow />
-              <span>Kerala, India</span>
+            <FaLocationDot/>
+            <span>Kerala, India</span>
             </div>
           </div>
+        </div>
+        <div className="copyright">
+        <p>&copy; {new Date().getFullYear()} Life Care Hospital</p>
         </div>
       </footer>
     </>
