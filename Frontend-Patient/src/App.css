@@ -168,6 +168,9 @@ h6 {
   color: gray;
   margin-bottom: 20px;
 }
+.form-component a:hover{
+  color:#40699d;
+}
 .form-component form {
   display: flex;
   flex-direction: column;
@@ -230,11 +233,11 @@ h6 {
 .register-form h2 {
   color: #000;
 }
-.appointment-form button{
-  margin:  auto;
+.appointment-form button {
+  margin: auto;
 }
-.appointment-form p{
-  margin-bottom: 0
+.appointment-form p {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1110px) {
@@ -341,14 +344,14 @@ footer .content div ul {
   gap: 10px;
 }
 footer .content div ul a {
-  color: gray;
+  color: #000;
   text-decoration: none;
 }
 footer .content div ul a:hover {
   color: #1f4e8c;
   transition: 0.3s;
 }
-footer .content div ul li span  {
+footer .content div ul li span {
   color: gray;
 }
 footer .content div ul li span:first-child {
@@ -393,22 +396,21 @@ footer .content div:last-child div svg {
   }
 }
 
-footer  div:last-child p {
+footer div:last-child p {
   text-align: center;
-  
- flex: 1;
- 
+
+  flex: 1;
 }
-.social-icons{
+.social-icons {
   padding-top: 10px;
 }
 
-.social-icons a{
+.social-icons a {
   color: #000;
   margin-right: 15px;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
   color: #1f4e8c;
   margin-right: 15px;
 }

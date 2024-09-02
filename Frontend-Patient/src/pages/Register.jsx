@@ -22,15 +22,17 @@ const Register = () => {
     try {
       const response = await axios.post(
         "http://localhost:4000/api/v1/user/patient/register",
-        {firstName,
+        {
+          firstName,
           lastName,
           email,
           phone,
           password,
           gender,
           aadhar,
-          dob, 
-          role: "Patient" },
+          dob,
+          role: "Patient",
+        },
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -52,8 +54,9 @@ const Register = () => {
       <h2>Sign Up</h2>
       <p>Please Signup to Continue</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente facere
-        quidem nesciunt accusamus mollitia ab.
+        Get Started Fill out the form below to create your Life Care Hospital
+        account. Your information is safe with us, and we are committed to
+        maintaining your privacy and security.
       </p>
 
       <form onSubmit={handleRegister}>
@@ -103,12 +106,12 @@ const Register = () => {
         </div>
 
         <div>
-         <select value={gender} onChange={(e)=> setGender(e.target.value)}>
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Others">Others</option>
-         </select>
+          <select value={gender} onChange={(e) => setGender(e.target.value)}>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
 
           <input
             type="password"
@@ -137,7 +140,6 @@ const Register = () => {
           <button type="submit">Register</button>
         </div>
       </form>
-
     </div>
   );
 };
