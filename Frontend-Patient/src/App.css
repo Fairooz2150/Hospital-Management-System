@@ -181,10 +181,10 @@ h6 {
 .form-component form select,
 .form-component form textarea {
   flex: 1;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px 10px 10px 40px;
-  border-radius: 7px;
-  border: 1px solid gray;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 4, 10);
 }
 .form-component button {
   padding: 10px 35px;
@@ -192,10 +192,13 @@ h6 {
   font-weight: 700;
   width: fit-content;
   border: none;
-  border-radius: 8px;
-  font-size: 24px;
+  border-radius: 20px;
+  font-size: 20px;
   margin-bottom: 30px;
-  background: linear-gradient(140deg, #9083d5, #271776ca);
+  background: linear-gradient(to right, #332b99, #5a559e);
+}
+.form-component button:hover {
+  background: linear-gradient(to left, #332b99, #5a559e);
 }
 .form-component .wrapper {
   display: flex;
@@ -227,6 +230,13 @@ h6 {
 .register-form h2 {
   color: #000;
 }
+.appointment-form button{
+  margin:  auto;
+}
+.appointment-form p{
+  margin-bottom: 0
+}
+
 @media (max-width: 1110px) {
   .appointment-form form div:nth-child(4) {
     flex-direction: column;
@@ -393,7 +403,7 @@ footer .content div:last-child div svg {
 }
 .card {
   position: relative;
-  border-radius: 8px;
+  border-radius: 10px;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -401,9 +411,12 @@ footer .content div:last-child div svg {
   padding-bottom: 15px;
   padding-left: 10px;
   padding-right: 20px;
-  min-height: 360px;
+  min-height: 300px;
   margin: 0 10px;
   text-decoration: none;
+}
+.card:hover {
+  box-shadow: 0 0px 15px rgba(41, 78, 157, 0.5);
 }
 .card img {
   position: absolute;
@@ -414,10 +427,9 @@ footer .content div:last-child div svg {
   left: 0;
 }
 .card .depart-name {
-  margin-bottom: 30px;
-  background: #e5e5e5;
-  width: 320px;
-  font-size: 24px;
+  background: white;
+  width: 280px;
+  font-size: 20px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -483,7 +495,10 @@ nav .btn {
   z-index: 2;
 }
 nav .logoutBtn {
-  background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  background: linear-gradient(to right, rgb(15, 54, 139), rgb(63, 104, 169));
+}
+nav .logoutBtn:hover {
+  background: linear-gradient(to left, rgb(15, 54, 139), rgb(63, 104, 169));
 }
 nav .loginBtn {
   background: linear-gradient(135deg, black, rgb(49, 49, 49));
@@ -546,7 +561,7 @@ nav svg {
     font-weight: 700;
   }
   nav .logoutBtn {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 @media (max-width: 800px) {
@@ -573,17 +588,19 @@ nav svg {
 
 input[type="date"]:before {
   content: attr(placeholder);
-  color: #444;
+  color: #1f4a71;
   margin-right: 0.5em;
 }
+
 input[type="time"]:before {
   content: attr(placeholder);
-  color: #444;
+  color: #1f4a71;
   margin-right: 0.5em;
 }
-.logo-img{
+
+.logo-img {
   width: 180px;
 }
-footer .logo-img{
+footer .logo-img {
   width: 100%;
 }

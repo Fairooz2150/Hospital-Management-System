@@ -200,15 +200,15 @@ const AppointmentForm = () => {
               flexDirection: "row",
             }}
           >
-            <p style={{ marginBottom: 0 }}>Have you visited before?</p>
+            <p>Have you visited before?</p>
             <input
               type="checkbox"
               checked={hasVisited}
               onChange={(e) => setHasVisited(e.target.checked)}
-              style={{ flex: "none", width: "25px" }}
+              style={{ flex: "none", width: "25px"}}
             />
           </div>
-          <button style={{ margin: "0 auto" }}>Get Appointment</button>
+          <button >Get Appointment</button>
         </form>
       </div>
     </>
