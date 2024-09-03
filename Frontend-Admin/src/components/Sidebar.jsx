@@ -8,8 +8,9 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { MdAddModerator } from "react-icons/md";
 import { IoPersonAddSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { toast } from "react-toastify";
+import axios from "axios";
+
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -72,8 +73,11 @@ const Sidebar = () => {
           <RiLogoutBoxFill onClick={handleLogout} />
         </div>
       </nav>
-      <div className="wrapper">
-        
+      <div
+        style={!isAuthenticated ? { display: "none" } : { display: "flex" }}
+        className="wrapper"
+      >
+        <GiHamburgerMenu className="hamburger" onClick={() => setShow(!show)} />
       </div>
     </>
   );
