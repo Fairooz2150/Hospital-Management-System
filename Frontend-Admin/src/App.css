@@ -187,3 +187,11 @@ body {
 .messages .banner .card div p span {
   font-weight: 500;
 }
+.add-admin-form form {
+  width: 100%;
+}
+@media (max-width: 485px) {
+  .add-admin-form {
+    padding: 30px 0;
+  }
+}
