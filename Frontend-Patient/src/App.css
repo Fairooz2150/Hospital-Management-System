@@ -218,6 +218,9 @@ h6 {
 .form-component .wrapper .banner:last-child img {
   max-width: 450px;
 }
+button{
+  cursor: pointer;
+}
 .login-form {
   margin: 100px auto 20px auto;
   max-width: 800px;
