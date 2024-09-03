@@ -7,6 +7,8 @@ import AddNewAdmin from "./components/AddNewAdmin";
 import Login from "./components/Login";
 import Doctors from "./components/Doctors";
 import Sidebar from "./components/Sidebar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -21,6 +23,7 @@ const App = () => {
           <Route path="/messages" element={<Messages />} />
           <Route path="/doctors" element={<Doctors />} />
         </Routes>
+        <ToastContainer position="top-center" />
       </Router>
     </>
   );
