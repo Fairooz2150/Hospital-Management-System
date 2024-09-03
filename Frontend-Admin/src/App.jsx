@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Routes, route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
