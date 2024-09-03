@@ -59,7 +59,6 @@ const Login = () => {
           onChange={(e) => setconfirmPassword(e.target.value)}
           placeholder="Confirm Password"
         />
-
        
         <div style={{ justifyContent: "center", alignItems: "center" }}>
           <button type="submit">Login</button>
