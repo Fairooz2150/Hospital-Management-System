@@ -328,3 +328,46 @@ input[type="time"]:before {
     grid-gap: 20px;
   }
 }
+
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dashboard .banner:first-child {
+  height: 35vh;
+  display: flex;
+  gap: 20px;
+}
+.dashboard .banner:first-child .firstBox {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background: #b5b5ff;
+  padding: 20px 20px 0 10px;
+}
+.dashboard .banner:first-child .firstBox img {
+  height: 100%;
+  flex: 1;
+}
+.dashboard .banner:first-child .firstBox .content {
+  flex: 2;
+}
+.dashboard .banner:first-child .firstBox .content div {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.dashboard .banner:first-child .firstBox .content div p {
+  margin-right: 10px;
+  font-size: 34px;
+}
+.dashboard .banner:first-child .firstBox .content div h5 {
+  color: #ff008d;
+}
+.dashboard .banner:first-child .firstBox .content p {
+  font-size: 16px;
+}
