@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../main";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loading from "./loading";
 import { toast } from "react-toastify";
 
 const AddNewAdmin = () => {
@@ -14,11 +15,14 @@ const AddNewAdmin = () => {
   const [aadhar, setAadhar] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   const navigateTo = useNavigate();
 
   const addNewAdmin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(
         "http://localhost:4000/api/v1/user/admin/addnew",
@@ -42,8 +46,14 @@ const AddNewAdmin = () => {
       navigateTo("/");
     } catch (error) {
       toast.error(error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loading/> 
+  }
 
 if (!isAuthenticated) {
     return <Navigate to={"/login"} />;

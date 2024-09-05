@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
 import axios from "axios";
+import Loading from "./loading";
+
 import { Navigate } from "react-router-dom";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const { isAuthenticated } = useContext(Context);
 
   useEffect(() => {
@@ -18,10 +20,16 @@ const Messages = () => {
         setMessages(data.messages);
       } catch (error) {
         console.log("Error Occure While Fetching Messages:", error);
+      }finally {
+        setLoading(false);
       }
     };
     fetchMessages();
   }, []);
+
+  if (loading) {
+    return <Loading/> 
+  }
 
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;

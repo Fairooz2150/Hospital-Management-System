@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Loading from "./loading";
 import { Navigate } from "react-router-dom";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true); // Added loading state
+  const [loading, setLoading] = useState(true);
   const { isAuthenticated } = useContext(Context);
 
   useEffect(() => {
@@ -20,14 +21,14 @@ const Doctors = () => {
       } catch (error) {
         toast.error(error.response.data.message);
       } finally {
-        setLoading(false); // Set loading to false once fetching is done
+        setLoading(false);
       }
     };
     fetchDoctors();
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // Optionally, you can show a loading spinner or message
+    return <Loading/> 
   }
 
   if (!isAuthenticated) {

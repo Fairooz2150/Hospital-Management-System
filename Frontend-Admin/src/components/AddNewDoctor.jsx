@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../main";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Loading from "./loading";
 import { toast } from "react-toastify";
 
 const AddNewDoctor = () => {
@@ -17,6 +18,7 @@ const AddNewDoctor = () => {
   const [doctrDptmnt, setDoctrDptmnt] = useState("");
   const [doctrAvatar, setDoctrAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const departmentsArray = [
     "Pediatrics",
@@ -29,7 +31,6 @@ const AddNewDoctor = () => {
     "Dermatology",
     "ENT",
   ];
-
 
   const navigateTo = useNavigate();
 
@@ -45,6 +46,8 @@ const AddNewDoctor = () => {
 
   const addNewDoctor = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
       const formData = new FormData();
       formData.append("firstName", firstName);
@@ -69,10 +72,16 @@ const AddNewDoctor = () => {
       toast.success(response.data.message);
       navigateTo("/");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || "An error occurred");
+    } finally {
+      setLoading(false);
     }
   };
-
+  
+  if (loading) {
+    return <Loading />;
+  }
+  
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;
   }
@@ -155,20 +164,15 @@ const AddNewDoctor = () => {
                   onChange={(e) => setDoctrDptmnt(e.target.value)}
                 >
                   <option value="">Select Department</option>
-                  {
-                    departmentsArray.map((element,index)=>{
-                      return(
-                        <option value={element} key={index}>
-                          {element}
-                        </option>
-                      )
-                    })
-                  }
+                  {departmentsArray.map((element, index) => (
+                    <option value={element} key={index}>
+                      {element}
+                    </option>
+                  ))}
                 </select>
                 <button type="submit">Register New Doctor</button>
               </div>
             </div>
-           
           </form>
         </div>
       </section>

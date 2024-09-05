@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
 import { Navigate } from "react-router-dom";
+import Loading from "./loading";
 import axios from "axios";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
@@ -10,6 +11,7 @@ const Dashboard = () => {
   const { isAuthenticated, user } = useContext(Context);
 
   const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -22,6 +24,8 @@ const Dashboard = () => {
       } catch (error) {
         setAppointments([]);
         console.log("Some Error Occured While Fetching Appointments", error);
+      } finally {
+        setLoading(false); 
       }
     };
     fetchAppointments();
@@ -44,8 +48,14 @@ const Dashboard = () => {
       toast.success(data.message);
     } catch (error) {
       toast.error(error.response.data.message);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loading/> 
+  }
 
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;
