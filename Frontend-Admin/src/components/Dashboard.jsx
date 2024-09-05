@@ -54,10 +54,13 @@ const Dashboard = () => {
           </div>
           <div className="thirdBox">
             <p>Departments</p>
-            <h3>
-              Pediatrics Orthopedics Cardiology Neurology Oncology Radiology
-              Physical Therapy Dermatology ENT
-            </h3>
+            <ul>
+              <li>Pediatrics, Orthopedics</li>
+              <li>Cardiology, Neurology</li>
+              <li>Oncology, Radiology</li>
+              <li>Physical Therapy, Dermatology</li>
+              <li>ENT</li>
+            </ul>
           </div>
         </div>
       </section>
