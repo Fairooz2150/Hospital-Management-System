@@ -48,6 +48,11 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
+          <div className="secondBox">
+            <p>Total Appointments</p>
+            <h3>{appointments.length}</h3>
+          </div>
+         
         </div>
       </section>
     </>
