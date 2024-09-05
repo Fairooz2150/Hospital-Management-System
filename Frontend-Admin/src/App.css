@@ -414,3 +414,59 @@ input[type="time"]:before {
   font-weight: 700;
   letter-spacing: 2px;
 }
+
+
+.dashboard .banner:last-child {
+  height: 65vh;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+}
+.dashboard .banner:last-child h5 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #111;
+}
+.dashboard .banner table {
+  width: 100%;
+  color: #111;
+  font-size: 20px;
+}
+.dashboard .banner table select {
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  font-weight: 600;
+}
+.dashboard table td svg{
+  display: flex;
+  margin: 0 auto;
+}
+.dashboard table td .green{
+  font-size: 20px;
+  color: #16a34a;
+}
+.dashboard table td .red{
+  font-size: 20px;
+  color: #dc2626;
+}
+.dashboard .banner table select:focus {
+  outline: none;
+}
+.dashboard .banner table .value-pending {
+  color: #eab308;
+}
+.dashboard .banner table .value-accepted {
+  color: #16a34a;
+}
+.dashboard .banner table .value-rejected {
+  color: #dc2626;
+}
+.dashboard .banner table thead {
+  text-align: justify;
+  padding: 12px 0;
+}
+.dashboard .banner table thead th {
+  padding: 12px 0;
+}
