@@ -371,3 +371,20 @@ input[type="time"]:before {
 .dashboard .banner:first-child .firstBox .content p {
   font-size: 16px;
 }
+
+
+.dashboard .banner:first-child .secondBox {
+  background: #3939d9f2;
+  color: #fff;
+}
+
+.dashboard .banner:first-child .secondBox
+{
+  flex: 1;
+  border-radius: 20px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}

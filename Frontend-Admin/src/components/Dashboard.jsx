@@ -52,7 +52,7 @@ const Dashboard = () => {
             <p>Total Appointments</p>
             <h3>{appointments.length}</h3>
           </div>
-         
+          
         </div>
       </section>
     </>
