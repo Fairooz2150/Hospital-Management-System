@@ -53,7 +53,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <section className="dashboard">
+      <section className="dashboard page">
         <div className="banner">
           <div className="firstBox">
             <img src="/doc.png" alt="Admin" />
@@ -65,9 +65,7 @@ const Dashboard = () => {
               <p>
                 The Life Care Administration panel allows admins to add new
                 administrators, register doctors, and manage patient
-                appointments. Admins can view, approve, or reject appointment
-                requests, ensuring smooth hospital operations and improved
-                efficiency.
+                appointments.
               </p>
             </div>
           </div>

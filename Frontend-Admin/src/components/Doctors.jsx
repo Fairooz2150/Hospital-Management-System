@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
+  const [loading, setLoading] = useState(true); // Added loading state
   const { isAuthenticated } = useContext(Context);
 
   useEffect(() => {
@@ -18,10 +19,16 @@ const Doctors = () => {
         setDoctors(data.doctors);
       } catch (error) {
         toast.error(error.response.data.message);
+      } finally {
+        setLoading(false); // Set loading to false once fetching is done
       }
     };
     fetchDoctors();
   }, []);
+
+  if (loading) {
+    return <p>Loading...</p>; // Optionally, you can show a loading spinner or message
+  }
 
   if (!isAuthenticated) {
     return <Navigate to={"/login"} />;
