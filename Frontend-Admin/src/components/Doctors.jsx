@@ -31,23 +31,43 @@ const Doctors = () => {
     <>
       <section className="page doctors">
         <h1>Doctors</h1>
-        <div className="banner">{doctors && doctors.length > 0 ? (doctors.map((element, index)=>{
-          return(
-            <div className="card" key={index}>
-                  <img src={element.doctrAvatar && element.doctrAvatar.url} alt="Doctor Avatar" />
-            <h4>{`${element.firstName} ${element.lastName}`}</h4>
-            <div className="details">
-              <p>Email:<span>{element.email}</span></p>
-              <p>Phone:<span>{element.phone}</span></p>
-              <p>DoB:<span>{element.dob}</span></p>
-              <p>Department:<span>{element.doctrdptmnt}</span></p>
-              <p>Aadhar:<span>{element.aadhar}</span></p>
-              <p>Gender:<span>{element.gender}</span></p>
-
-            </div>
-            </div>
-          )
-        })) : <h1>No Registered Doctors Found!</h1>}</div>
+        <div className="banner">
+          {doctors && doctors.length > 0 ? (
+            doctors.map((element, index) => {
+              return (
+                <div className="card" key={index}>
+                  <img
+                    src={element.doctrAvatar && element.doctrAvatar.url}
+                    alt="Doctor Avatar"
+                  />
+                  <h4>{`${element.firstName} ${element.lastName}`}</h4>
+                  <div className="details">
+                    <p>
+                      Email:<span>{element.email}</span>
+                    </p>
+                    <p>
+                      Phone:<span>{element.phone}</span>
+                    </p>
+                    <p>
+                      DoB:<span>{element.dob.substring(0, 10)}</span>
+                    </p>
+                    <p>
+                      Department:<span>{element.doctrdptmnt}</span>
+                    </p>
+                    <p>
+                      Aadhar:<span>{element.aadhar}</span>
+                    </p>
+                    <p>
+                      Gender:<span>{element.gender}</span>
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <h1>No Registered Doctors Found!</h1>
+          )}
+        </div>
       </section>
     </>
   );
