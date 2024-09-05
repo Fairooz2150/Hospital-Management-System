@@ -32,7 +32,9 @@ body {
   width: 100px; 
   height: 100px; 
 }
-
+select, button{
+  cursor: pointer;
+}
 .page {
   margin-left: 120px;
   background: #e5e5e5;
@@ -67,7 +69,6 @@ body {
   padding-bottom: 60px;
   min-height: 100vh;
   background: #e5e5e5;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -112,22 +113,24 @@ body {
 .form-component form select,
 .form-component form textarea {
   flex: 1;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px 10px 10px 40px;
-  border-radius: 7px;
-  border: 1px solid gray;
+  border-radius: 20px;
+  border: 1px solid #141349;;
 }
 .form-component button {
+  margin-top: 15px;
   padding: 10px 35px;
   color: #fff;
   font-weight: 700;
   width: fit-content;
   border: none;
-  border-radius: 8px;
-  font-size: 24px;
+  border-radius: 20px;
+  font-size: 20px;
   margin-bottom: 30px;
-  background: linear-gradient(140deg, #9083d5, #271776ca);
+  background: linear-gradient(to right, #9083d5, #271776ca);
 }
+
 .form-component .wrapper {
   display: flex;
   gap: 50px;
@@ -158,6 +161,7 @@ body {
   .form-component form textarea {
     font-size: 20px;
     padding: 10px;
+    border-radius: 20px;
   }
 }
 @media (max-width: 600px) {
@@ -205,7 +209,7 @@ body {
 }
 .dashboard .banner:first-child .firstBox .content div p {
   margin-right: 10px;
-  font-size: 28px;
+  font-size: 26px;
 }
 .dashboard .banner:first-child .firstBox .content div h5 {
   color: #ff008d;
@@ -502,6 +506,10 @@ body {
   border-radius: 12px;
   padding: 20px;
 }
+.card:hover{
+  box-shadow: 0 0 18px rgba(30, 52, 127, 0.5);
+
+}
 .messages .banner .card div {
   width: 100%;
   display: flex;
@@ -564,22 +572,29 @@ body {
 .add-doctor-form form select,
 .add-doctor-form form textarea {
   flex: 1;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px 10px 10px 40px;
-  border-radius: 7px;
+  border-radius: 20px;
   border: 1px solid gray;
 }
 .add-doctor-form button {
+  margin: auto;
   padding: 10px 35px;
   color: #fff;
   font-weight: 700;
   width: fit-content;
   border: none;
-  border-radius: 8px;
-  font-size: 24px;
+  border-radius: 20px;
+  font-size: 20px;
   margin-bottom: 30px;
-  background: linear-gradient(140deg, #9083d5, #271776ca);
+  background: linear-gradient(to right, #9083d5, #271776ca);
 }
+button:hover {
+  background: linear-gradient(to left, #9083d5, #271776ca);
+  transform: scale(1.1);
+
+}
+
 @media (max-width: 945px) {
   .add-doctor-form form .first-wrapper {
     flex-direction: column;
@@ -590,11 +605,11 @@ body {
 }
 input[type="date"]:before {
   content: attr(placeholder);
-  color: #444;
+  color: #141349;
   margin-right: 0.5em;
 }
 input[type="time"]:before {
   content: attr(placeholder);
-  color: #444;
+  color: #141349;
   margin-right: 0.5em;
 }
