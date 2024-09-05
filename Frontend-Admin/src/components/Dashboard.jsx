@@ -52,7 +52,13 @@ const Dashboard = () => {
             <p>Total Appointments</p>
             <h3>{appointments.length}</h3>
           </div>
-          
+          <div className="thirdBox">
+            <p>Departments</p>
+            <h3>
+              Pediatrics Orthopedics Cardiology Neurology Oncology Radiology
+              Physical Therapy Dermatology ENT
+            </h3>
+          </div>
         </div>
       </section>
     </>
