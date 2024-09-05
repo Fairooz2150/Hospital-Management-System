@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,9 +12,11 @@ import Navbar from "./components/Navbar";
 import { Context } from "./main";
 import axios from "axios";
 import Footer from "./components/footer";
+import Loading from "./components/loading"; 
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
+  const [loading, setLoading] = useState(true); 
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -27,10 +29,16 @@ const App = () => {
       } catch (error) {
         setIsAuthenticated(false);
         setUser({});
+      } finally {
+        setLoading(false);
       }
     };
     fetchUser();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, setIsAuthenticated, setUser]);
+
+  if (loading) {
+    return <Loading />; 
+  }
 
   return (
     <>
