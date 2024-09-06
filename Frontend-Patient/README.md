@@ -47,17 +47,17 @@ To run the Patient Portal of the Hospital Management System locally, follow thes
 
 ### Installation
 
-1. Clone the repository:
+ 1. Clone the repository:
 
-  ```bash
+   ```bash
    git clone https://github.com/Fairooz2150/Hospital-Management-System.git
     ```
 
-2. Navigate to the **Frontend-Patient** folder:
+2. Navigate to the Frontend-Patient folder:
 
-   ```bash
-   cd Frontend-Patient
-   ```
+  ```bash
+cd Frontend-Patient
+  ```
 
 3. Install the required dependencies:
 
