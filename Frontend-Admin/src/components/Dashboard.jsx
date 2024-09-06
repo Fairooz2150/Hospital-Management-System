@@ -137,7 +137,7 @@ const Dashboard = () => {
                           <option className="value-accepted" value="Accepted">
                             Accepted
                           </option>
-                          <option className="value-accepted" value="Rejected">
+                          <option className="value-rejected" value="Rejected">
                             Rejected
                           </option>
                         </select>
