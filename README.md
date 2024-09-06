@@ -1,6 +1,5 @@
 
 
-
 # Hospital Management System - Full Stack Project
 
 This project is a comprehensive **Hospital Management System** featuring a responsive design for both administrators and patients. It includes a backend service and two separate frontend implementations for managing hospital operations and patient interactions.
@@ -30,7 +29,7 @@ The project is organized into the following main folders:
 ### Backend
 The backend is built using Node.js and Express, and it includes:
 - **Dependencies**: `bcrypt`, `cloudinary`, `cookie-parser`, `cors`, `dotenv`, `express`, `express-fileupload`, `jsonwebtoken`, `mongoose`, `validator`.
-- **Features**: Error handling, input validation, token generation and user schemas.
+- **Features**: Error handling, input validation, token generation, and user schemas.
 
 ### Frontend - Admin
 The admin panel is built with React.js and provides a responsive interface for managing hospital operations.
@@ -120,6 +119,15 @@ Ensure you have the following environment variables set in your `.env` file for 
 - `CLOUDINARY_API_KEY`: Cloudinary API key.
 - `CLOUDINARY_API_SECRET`: Cloudinary API secret.
 
+### Creating an Admin User
+
+1. **Register a new patient user** by following the registration process on the Patient Portal.
+2. **Update the user's role** to "Admin" directly in the database:
+   - Open your MongoDB client (e.g., MongoDB Compass or your terminal).
+   - Find the `users` collection in your database.
+   - Locate the user document with the role of "Patient" that you registered.
+   - Update the `role` field from "Patient" to "Admin".
+
 ### Contributing
 
 If you'd like to contribute to the project:
@@ -128,4 +136,5 @@ If you'd like to contribute to the project:
 3. Commit your changes (`git commit -am 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Create a new Pull Request.
+
 
