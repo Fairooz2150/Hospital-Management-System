@@ -418,8 +418,8 @@ select, button{
     top: 30px;
     left: 40px;
     font-size: 34px;
-    background: #3939d9f2;
-    color: #fff;
+    cursor: pointer;
+    color: #afa8a8;
     height: 40px;
     width: 40px;
     border-radius: 8px;
@@ -428,6 +428,7 @@ select, button{
     align-items: center;
   }
   .wrapper .hamburger {
+    padding: 0;
     display: block;
   }
 }
