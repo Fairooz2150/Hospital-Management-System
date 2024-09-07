@@ -6,7 +6,7 @@ This project is a comprehensive **Hospital Management System** featuring a respo
 
 ## Features
 
-### Admin Panel:  [https://lifecare-administration.netlify.app]
+### [Admin Panel:](https://lifecare-administration.netlify.app)
 - **Doctor Management**: Register and manage doctor profiles.
 - **Admin Management**: Add new administrators.
 - **Appointment Management**: View, approve, or reject patient appointments.
