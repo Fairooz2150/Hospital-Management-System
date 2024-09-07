@@ -60,7 +60,7 @@ const Doctors = () => {
                       DoB:<span>{element.dob.substring(0, 10)}</span>
                     </p>
                     <p>
-                      Department:<span>{element.doctrdptmnt}</span>
+                      Department:<span>{element.doctrDptmnt}</span>
                     </p>
                     <p>
                       Aadhar:<span>{element.aadhar}</span>
