@@ -12,7 +12,7 @@ This project is a comprehensive **Hospital Management System** featuring a respo
 - **Appointment Management**: View, approve, or reject patient appointments.
 - **Patient Messages**: Read and respond to patient messages.
 
-### Patient Portal:
+### [Patient Portal:](https://lifecare-hospitals.netlify.app)
 - **Registration and Login**: Patients can register and log in.
 - **Appointment Booking**: Schedule appointments with doctors, including patient details and date.
 - **Message Sending**: Send messages to the admin.
