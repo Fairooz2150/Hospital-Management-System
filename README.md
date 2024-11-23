@@ -59,6 +59,10 @@ To get started with the project, follow these instructions:
    ```bash
     git clone https://github.com/Fairooz2150/Hospital-Management-System.git
    ```
+    - First open Hospital-Management-System folder:
+     ```bash
+     cd Hospital-Management-System
+     ```
 
 2. **Navigate to each folder and install dependencies:**
 
@@ -82,25 +86,26 @@ To get started with the project, follow these instructions:
 
 ### Running the Application
 
+
 1. **Start the Backend server:**
 
    ```bash
    cd Backend
-   npm start
+   npm run dev
    ```
 
 2. **Start the Frontend-Admin application:**
 
    ```bash
    cd Frontend-Admin
-   npm start
+   npm run dev
    ```
 
 3. **Start the Frontend-Patient application:**
 
    ```bash
    cd Frontend-Patient
-   npm start
+   npm run dev
    ```
 
 4. **Open your browser and navigate to:**
